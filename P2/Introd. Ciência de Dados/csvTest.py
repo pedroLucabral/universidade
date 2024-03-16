@@ -2,7 +2,7 @@ import csv
 
 table = {}
 
-with open("addresses.csv", newline="") as csvfile:
+with open("leagueChampions.csv", newline="") as csvfile:
     reader = csv.DictReader(csvfile)
     for i in reader.fieldnames:
         table[i] = []

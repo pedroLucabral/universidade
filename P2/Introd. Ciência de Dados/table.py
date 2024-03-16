@@ -1,3 +1,6 @@
+#Pedro Lucas Simões Cabral
+#Matricula: 20230014238
+
 from tabulate import tabulate
 from statistics import mean
 from copy import deepcopy
@@ -25,8 +28,6 @@ def addRow(table, valuesList):
     if len(valuesList) > len(tableObj):
         raise Exception("The number of values on the list exceeds the size of the table")
     
-
-
     for i in range(len(tableObj)):
         tableObj[list(tableObj.keys())[i]].append(valuesList[i])
 
@@ -95,6 +96,7 @@ def meanColumns(table):
 
 def printTable(tableObj):
     print(tabulate(tableObj, headers="keys", tablefmt="fancy_grid"))
+
 
 def readCsv(file):
     tableObj = {}

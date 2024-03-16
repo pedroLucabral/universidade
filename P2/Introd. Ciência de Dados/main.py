@@ -1,3 +1,7 @@
+#Pedro Lucas Simões Cabral
+#Matricula: 20230014238
+
+
 from table import *
 
 #Definindo a lista de nomes e a matriz de valores
@@ -17,7 +21,6 @@ valoresMatriz = [
 table1 = createTable(nomesColunas, valoresMatriz)
 printTable(table1)
 print("Criando a tabela\n\n")
-
 
 #Adicionando uma linha
 table1 = addRow(table1, ["Clarice", 20, "CDIA", 8])
@@ -45,7 +48,7 @@ print(f"Soma dos valores das colunas que possuem números: {sumColumns(table1)}\
 print(f"Média dos valores das colunas que possuem números: {meanColumns(table1)}\n\n")
 
 #Criação de tabela a partir de arquivo csv
-table2 = readCsv("addresses.csv")
+table2 = readCsv("leagueChampions.csv")
 printTable(table2)
 print("Criação de tabela a partir de arquivo csv de informações sobre personagens do jogo League of Legends\n\n")
 
@@ -62,10 +65,18 @@ def onlyADCarries(row):
 
 def highAttackRange(row):
     return True if int(row[4]) >= 550 else False
+
 #================================
 
+#Filtrando a tabela
+print("Tabela filtrada apenas com homens\n")
 printTable(filter(table1, onlyMales))
+print("Tabela filtrada apenas com alunos do curso de Ciência da Computação\n")
 printTable(filter(table1, onlyCC))
 
+print("\n\n")
+
+print("Tabela filtrada apenas com personagens do jogo League of Legends que são AD Carries\n")
 printTable(filter(table2, onlyADCarries))
+print("Tabela filtrada apenas com personagens do jogo League of Legends que possuem alcance de ataque maior ou igual a 550\n")
 printTable(filter(table2, highAttackRange))
